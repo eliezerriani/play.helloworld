@@ -1,0 +1,12 @@
+logs
+project/project
+project/target
+target
+tmp
+dist
+.cache
+bin
+.cache-main
+.cache-tests
+.classpath
+.project

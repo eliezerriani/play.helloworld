@@ -1,0 +1,22 @@
+@(produtos: List[model.Produto])
+
+@import helper._
+
+@main("Welcome to Play") {
+  	<h1>Welcome to Play!</h1>
+  	<ul>
+  	@for(produto <- produtos) {
+  		<li>@produto.getCodigo() - @produto.getDescricao() - @produto.isAtivo() - 
+	  		@{	if(produto.getDataCadastro() != null){ 
+	  				produto.getDataCadastro().format("dd/MM/yyyy")
+	  			} 
+	  		 }</li>
+	}
+	</ul>
+	
+	
+	@form(action = routes.HomeController.salvar()) {
+		@CSRF.formField
+		<input type="submit" />
+	}
+}
